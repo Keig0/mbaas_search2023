@@ -80,6 +80,22 @@
             msg += "</table>";
             $("#message").html(msg);
         }
+
+        function sortData1() {
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.order("number", false).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+        function sortData2() {
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.order("number", true).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
     </script>
 </head>
 
@@ -100,6 +116,9 @@
         <button class="btn" onclick="searchLevelLT()">Level &lt </button>
         <button class="btn" onclick="searchLevel()">Number</button>
         <button class="btn" onclick="searchLevelGT()">Level &gt </button>
+        <br>
+        <button class="btn" onclick="sortData1()">Sort ↓ </button>
+        <button class="btn" onclick="sortData2()">Sort ↑ </button>
     </div>
     <div id="message">message area</div>
 </body>
