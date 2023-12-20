@@ -96,6 +96,14 @@
                     showResults(results);
                 })
         }
+
+        function searchtype() {
+            let name = $("#type").val();
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.equalTo("type", name).fetchAll().then(function(results) {
+                showResults(results);
+            })
+        }
     </script>
 </head>
 
@@ -106,20 +114,25 @@
         <input id="name" type="text" placeholder="monster name">
     </div>
     <div>
-        <label for="level">level:</label>
+        <label for="level">number:</label>
         <input id="level" type="number" placeholder="monster level">
+    </div>
+    <div>
+        <label for="type">type:</label>
+        <input id="type" type="type" placeholder="monster type">
     </div>
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
         <button class="btn" onclick="searchName()">Name</button>
         <br>
-        <button class="btn" onclick="sorttype()">Type </button>
-         <button class="btn" onclick="searchLevel()">Number</button>
+        <button class="btn" onclick="searchtype()">Type </button>
+         
         <!--
         <button class="btn" onclick="searchLevelLT()">Level &lt </button>
         <button class="btn" onclick="searchLevelGT()">Level &gt </button>
         -->
         <br>
+        <button class="btn" onclick="searchLevel()">Number</button>
         <button class="btn" onclick="sortData1()">Sort ↓ </button>
         <button class="btn" onclick="sortData2()">Sort ↑ </button>
     </div>
