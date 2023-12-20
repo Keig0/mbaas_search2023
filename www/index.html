@@ -104,6 +104,16 @@
                 showResults(results);
             })
         }
+
+        function randomDisplay() {
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.fetchAll()
+                .then(function(results) {
+                    const randomIndex = Math.floor(Math.random() * results.length);
+                    const randomMonster = results[randomIndex];
+                    showResults([randomMonster]);
+                })
+        }
     </script>
 </head>
 
@@ -125,16 +135,17 @@
         <button class="btn" onclick="fetchAll()">Fetch All</button>
         <button class="btn" onclick="searchName()">Name</button>
         <br>
-        <button class="btn" onclick="searchtype()">Type </button>
-         
+
         <!--
         <button class="btn" onclick="searchLevelLT()">Level &lt </button>
         <button class="btn" onclick="searchLevelGT()">Level &gt </button>
         -->
-        <br>
         <button class="btn" onclick="searchLevel()">Number</button>
         <button class="btn" onclick="sortData1()">Sort ↓ </button>
         <button class="btn" onclick="sortData2()">Sort ↑ </button>
+        <br>
+        <button class="btn" onclick="searchtype()">Type </button>
+        <button class="btn" onclick="randomDisplay()">ランダム</button>
     </div>
     <div id="message">message area</div>
 </body>
