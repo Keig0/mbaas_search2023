@@ -1,9 +1,10 @@
 /**/
 body {
-  background-color: papayawhip;
+  background-color: rgb(243, 75, 53);
 }
 h1 {
-  background-color: lightblue;
+  background-color: white;
+  text-align: center;
 }
 
 label {
@@ -29,12 +30,13 @@ input {
   width: 5em;
   border-radius: 10px;
   color: white;
-  background-color: blueviolet;
+  background-color: rgb(148, 148, 148);
 }
 
 #message {
   border-style: solid;
   border-color: grey;
+  background-color: white;
 }
 
 table {
