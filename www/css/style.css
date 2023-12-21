@@ -37,6 +37,7 @@ input {
   border-style: solid;
   border-color: grey;
   background-color: white;
+  text-align: center;
 }
 
 table {
